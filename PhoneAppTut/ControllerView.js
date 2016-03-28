@@ -10,5 +10,15 @@ CLASS({
     'foam.ui.ChoiceView',
     'foam.ui.DAOListView',
     'foam.ui.ImageView'
+  ],
+  
+  templates: [
+    function toHTML() {/*
+      Search: $$search
+      Sort by: $$order
+      <p>$$filteredDAO{ className: 'phones', tagName: 'ul' }</p>
+    */}
   ]
+  
+  
 });

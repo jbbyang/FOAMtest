@@ -1,46 +1,5 @@
 
 
-
-
-CLASS({
-  name: 'Controller',
-  
-  properties: [
-    {
-      name: 'search',
-      view: { factory_: 'foam.ui.TextFieldView', onKeyMode: true }
-    },
-    {
-      name: 'order',
-      defaultValue: Phone.NAME,
-      view: { factory_: 'foam.ui.ChoiceView', choices: [
-        [ Phone.NAME, 'Alphabetical' ],
-        [ Phone.AGE,  'Newest' ]
-      ] }
-    },
-    { name: 'dao', defaultValue: phones },    // phones comes from phones.js
-                                              // It's an in-memory DAO
-                                              // of the phone data
-    {
-      name: 'filteredDAO',
-      model_: 'foam.core.types.DAOProperty',
-      view: {
-        factory_: 'foam.ui.DAOListView',
-        rowView: 'PhoneCitationView',
-        mode: 'read-only'
-      },
-      dynamicValue: function() {
-        return this.dao.orderBy(this.order)
-            .where(CONTAINS_IC(SEQ(Phone.NAME, Phone.SNIPPET), this.search));
-      }
-    }
-  ]
-});
-
-
-
-
-/*
 CLASS({
   name: 'Controller',
   properties: [
@@ -91,4 +50,3 @@ CLASS({
   ]
 });
 
-*/
