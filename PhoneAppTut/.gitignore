@@ -1,0 +1,6 @@
+#ignore all downloaded files
+img/
+foam/
+#ignore all images
+*.jpg
+*.zip
