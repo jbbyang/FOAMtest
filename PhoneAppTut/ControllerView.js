@@ -13,11 +13,7 @@ CLASS({
   ],
   
   templates: [
-    function toHTML() {/*
-      Search: $$search
-      Sort by: $$order
-      <p>$$filteredDAO{ className: 'phones', tagName: 'ul' }</p>
-    */}
+    {name: "toHTML"}, 
   ]
   
   
